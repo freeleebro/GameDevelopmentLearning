@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phaser + TypeScript 学习 Demo</title>
+    <!--
+      这里用内联样式把页面的默认边距清掉，并让游戏画布居中、背景调暗。
+      这样 Phaser 的 canvas 就能铺满整个可视区域，不会有白边。
+    -->
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: #1a1a2e;
+        overflow: hidden;
+      }
+      #game-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      Phaser 会自动创建 <canvas> 元素。
+      我们只需要提供一个挂载点（一个空的 div），告诉 Phaser「把游戏画到这里面」。
+      id 会在 main.ts 里通过 document.getElementById 拿到。
+    -->
+    <div id="game-container"></div>
+
+    <!--
+      关键点：这个 script 引入的不是 .ts，而是 src/main.ts。
+      Vite 在开发时会自动把 TypeScript 编译成浏览器能懂的 JavaScript，
+      所以这里直接写 TS 的路径即可。
+    -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

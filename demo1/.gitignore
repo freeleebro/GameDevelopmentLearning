@@ -1,0 +1,17 @@
+# 依赖安装目录（运行 npm install 后生成，不需要提交/管理）
+node_modules/
+
+# 构建产物（运行 npm run build 后生成）
+dist/
+
+# 各类日志
+*.log
+npm-debug.log*
+
+# 编辑器本地配置
+.vscode/
+.idea/
+
+# 系统文件
+.DS_Store
+Thumbs.db

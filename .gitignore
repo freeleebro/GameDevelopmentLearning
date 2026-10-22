@@ -1,0 +1,33 @@
+# ===== 依赖与构建产物 =====
+node_modules/
+dist/
+build/
+out/
+
+# ===== 环境变量与密钥 =====
+.env
+.env.*
+!.env.example
+
+# ===== 日志 =====
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===== 缓存 =====
+.cache/
+.vite/
+.tsbuildinfo
+
+# ===== 编辑器与 IDE 本地配置 =====
+.vscode/
+.idea/
+
+# ===== 系统文件 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 工作区本地数据（不提交） =====
+.workbuddy/
