@@ -3,7 +3,7 @@ current_stage: S01
 current_task: S01-T1
 status: not_started
 last_updated: 2026-10-23
-next_action: "读 stages/S01-游戏循环与时间.md 的 T1，在 demos/s01-loop/ 用原生 canvas + requestAnimationFrame 让一个方块动起来（不许用 Phaser），并回答 T1 的三个关键问题：不 clearRect 会怎样、为什么不能用 for(;;)、rAF 回调参数是什么"
+next_action: "在 demos/s01-loop 执行 npm install 与 npm run dev，然后自己写 src/loop.ts 的 startLoop、src/world.ts 的 updateWorld、src/render.ts 的 render（三个文件已留 TODO 与签名），让方块动起来；验收前把 T1 三个问题答进 notes/stage01/T1.md"
 ---
 
 # PROGRESS · 学习进度看板
@@ -80,7 +80,7 @@ S00 已结案。当前 Stage = **S01 游戏循环与时间**（任务单：`stag
 
 | 任务 | 状态 | 备注 |
 | --- | --- | --- |
-| S01-T1 最小可运行循环（3h） | ⬜ | 原生 canvas + rAF；清屏→更新→绘制；验收 = 方块在动、不拖影、能解释为什么不能用 `for(;;)` |
+| S01-T1 最小可运行循环（3h） | ⬜ | 脚手架已就绪（`demos/s01-loop/`，index.html + main.ts + 三个 TODO 文件 + README）；验收 = 方块在动、不拖影、能解释为什么不能用 `for(;;)` |
 | S01-T2 帧率无关（4h） | ⬜ | `x += speed * dt`；1/30、1/60、1/144 三档实测表 |
 | S01-T3 掉帧与时间钳制（3h） | ⬜ | 人为阻塞 300ms，对比钳制前后 |
 | S01-T4 固定步长 + 累加器 + 插值（6h） | ⬜ | 本 Stage 最难，允许给伪代码 |

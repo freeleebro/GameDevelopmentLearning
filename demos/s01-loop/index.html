@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>S01 · 手写游戏循环</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #14161c;
+        display: grid;
+        place-items: center;
+        font-family: ui-monospace, Consolas, monospace;
+        color: #9aa4b2;
+      }
+      /* 画布 800×600，和 demo1 保持同尺寸，方便后面做对照 */
+      #game {
+        background: #1e222b;
+        border: 1px solid #2f3644;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game" width="800" height="600"></canvas>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
