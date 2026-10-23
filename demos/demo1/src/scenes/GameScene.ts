@@ -33,6 +33,8 @@ export class GameScene extends Phaser.Scene {
   private stars!: Phaser.Physics.Arcade.Group;
   private score = 0; // 这里直接给了初始值 0，所以不需要 ! 也不用手写类型（会自动推断为 number）
   private scoreText!: Phaser.GameObjects.Text;
+  private frameCount = 0;
+  private lastReport = performance.now();
 
   constructor() {
     super("GameScene");
@@ -63,7 +65,7 @@ export class GameScene extends Phaser.Scene {
     // ---------- 3. 创建星星（可收集物） ----------
     // this.physics.add.group() 创建一个「物理组」，用于管理一批同类物体。
     this.stars = this.physics.add.group({
-      collideWorldBounds: true,
+      collideWorldBounds: true, // 星星也不能跑出画布
       bounceY: 0,
     });
 
@@ -126,6 +128,13 @@ export class GameScene extends Phaser.Scene {
   // 默认每秒跑 60 帧，所以 update 每秒会被调用约 60 次。
   // 玩家的移动、动画、逻辑判断，都写在这里面。
   update(): void {
+    this.frameCount++;
+    const now = performance.now();
+    if (now - this.lastReport >= 1000) {
+      console.log("过去 1 秒游戏运行了", this.frameCount, "帧");
+      this.frameCount = 0;
+      this.lastReport = now;
+    }
     // 默认让玩家速度为 0（每帧都先重置，再根据输入设置，避免「惯性滑动」）。
     // setVelocityX(0) 设置水平速度为 0。
     this.player.setVelocityX(0);
